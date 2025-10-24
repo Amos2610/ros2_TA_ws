@@ -1,0 +1,4 @@
+[submodule "src/4_lecture/navigation2_ignition_gazebo_turtlebot3"]
+	path = src/4_lecture/navigation2_ignition_gazebo_turtlebot3
+	url = git@github.com:Amos2610/navigation2_ignition_gazebo_turtlebot3.git
+	branch = main
