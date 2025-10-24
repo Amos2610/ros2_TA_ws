@@ -1,0 +1,18 @@
+version: "3.9" # Docker Compose version
+
+services:
+  ros2:
+    container_name: ros2_humble_ubuntu_22.04 # コンテナ名
+    build: .                                # Dockerfileのあるディレクトリ
+    tty: true                               # コンテナに擬似端末を割り当てる
+    stdin_open: true                        # コンテナの標準入力を開いたままにする
+    network_mode: host                      # ホストのネットワークを使用
+    environment:
+      - TZ=Asia/Tokyo
+      - DISPLAY=${DISPLAY}                  # ホストのDISPLAY環境変数をコンテナに渡す
+      - ROS_DOMAIN_ID=49          # 学籍番号（TA fumoto）
+      - ROS_LOCALHOST_ONLY=1       # 他との通信しない
+    volumes:
+      - ../src:/root/ros2_ws/src   # ホストのros2_lecture_ws/srcをコンテナ内にマウント
+
+    command: bash -l               # コンテナ起動時にbashを実行(-lオプションでログインシェルにする)
