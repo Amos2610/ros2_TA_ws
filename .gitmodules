@@ -2,3 +2,12 @@
 	path = src/4_lecture/navigation2_ignition_gazebo_turtlebot3
 	url = git@github.com:Amos2610/navigation2_ignition_gazebo_turtlebot3.git
 	branch = main
+[submodule "src/5_lecture/ros2_whill"]
+	path = src/5_lecture/ros2_whill
+	url = https://github.com/Amos2610/ros2_whill.git
+[submodule "src/5_lecture/ros2_whill_interfaces"]
+	path = src/5_lecture/ros2_whill_interfaces
+	url = https://github.com/whill-labs/ros2_whill_interfaces.git
+[submodule "src/5_lecture/sllidar_ros2"]
+	path = src/5_lecture/sllidar_ros2
+	url = https://github.com/Amos2610/sllidar_ros2.git

@@ -7,11 +7,15 @@ services:
     tty: true                               # コンテナに擬似端末を割り当てる
     stdin_open: true                        # コンテナの標準入力を開いたままにする
     network_mode: host                      # ホストのネットワークを使用
+    privileged: true                        # /dev以下のデバイスへのアクセスへ権限を与える
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+      - "/dev/ttyUSB1:/dev/ttyUSB1"
     environment:
       - TZ=Asia/Tokyo
       - DISPLAY=${DISPLAY}                  # ホストのDISPLAY環境変数をコンテナに渡す
-      - ROS_DOMAIN_ID=49          # 学籍番号（TA fumoto）
-      - ROS_LOCALHOST_ONLY=1       # 他との通信しない
+      - ROS_DOMAIN_ID=49           # 学籍番号（TA fumoto）
+      - ROS_LOCALHOST_ONLY=0       # 1: 他との通信しない 0: 通信可能
     volumes:
       - ../src:/root/ros2_ws/src   # ホストのros2_lecture_ws/srcをコンテナ内にマウント
 
